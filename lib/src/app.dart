@@ -1,3 +1,5 @@
+// https://jsonplaceholder.typicode.com/photos/1
+
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {
@@ -23,6 +25,7 @@ class AppState extends State<App> {
           ),
           onPressed: () {
             setState(() {
+              // Increment counter
               counter += 1;
             });
           },
