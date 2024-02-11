@@ -12,7 +12,7 @@ class App extends StatelessWidget {
             Icons.add,
           ),
           onPressed: () {
-            print("Hi there");
+            print("Image");
           },
         ),
         appBar: AppBar(
