@@ -1,8 +1,9 @@
 // https://jsonplaceholder.typicode.com/photos/1
-
+//  flutter run -d chrome --web-browser-flag "--disable-web-security"
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/widgets/image_list.dart';
 import 'package:http/http.dart' show get;
 import 'package:flutter_application_1/src/models/image_model.dart';
 
@@ -14,16 +15,16 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> {
-  int counter = 0;
+  int counter = 1;
   List<ImageModel> images = [];
 
   void fetchImage() async {
     // Make a request to an
     // https://jsonplaceholder.typicode.com/photos/1
     counter += 1;
-    var response = await get(
+    final response = await get(
         Uri.parse('https://jsonplaceholder.typicode.com/photos/$counter'));
-    var imageModel = ImageModel.fromJson(json.decode(response.body));
+    final imageModel = ImageModel.fromJson(json.decode(response.body));
     setState(() {
       images.add(imageModel);
     });
@@ -33,9 +34,7 @@ class AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('$counter'),
-        ),
+        body: ImageList(images),
         floatingActionButton: FloatingActionButton(
           onPressed: fetchImage,
           child: const Icon(
