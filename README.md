@@ -1,3 +1,6 @@
+![Flutter](https://img.shields.io/badge/Flutter-Dart-blue)
+![Flutter version](https://img.shields.io/badge/Flutter-v3.16.9-blue)
+
 # Flutter Image Fetcher
 
 This is a simple Flutter application that fetches images from a remote server and dynamically renders them on the screen. The user can fetch and display new images by pressing a button.
